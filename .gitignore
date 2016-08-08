@@ -2,3 +2,5 @@ env/*
 virtenv/*
 *.pyc
 .directory
+guides/*
+static/can-crud/node_modules/*

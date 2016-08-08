@@ -1,0 +1,37 @@
+{
+  "name": "can-crud-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/crud.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "can": "^2.3.24",
+    "can-connect": "^0.5.5",
+    "can-crud": "^0.4.0",
+    "can-restless": "^0.4.0",
+    "can-ui": "^0.2.0",
+    "font-awesome": "^4.6.3",
+    "pubsub-js": "^1.5.3",
+    "query-string": "^4.2.2",
+    "steal": "^1.0.0-beta.3"
+  },
+  "devDependencies": {
+    "steal-tools": "^1.0.0-beta.3"
+  },
+  "system": {
+    "bundle": [
+      "can-crud-app/config/default/",
+      "can-crud-app/config/default/Task",
+      "can-crud-app/config/flask/",
+      "can-crud-app/config/flask/Article",
+      "can-crud-app/config/flask/Person_Basic",
+      "can-crud-app/config/flask/Person_Advanced",
+      "can-crud-app/config/flask/Visit"
+    ]
+  }
+}
