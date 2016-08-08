@@ -1,6 +1,6 @@
 from setuptools import setup
 
-setup(name='flaskcrud',
+setup(name='cancrud',
       version='1.0',
       description='OpenShift App',
       author='roemhildtg',
