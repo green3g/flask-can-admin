@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <link rel="stylesheet" href="{{ url_for('static', filename='can-crud/dist/bundles/can-crud-app/app/crud.css') }}">
+</head>
+
+<body>
+  <div class="alert alert-success alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <strong>Horray!</strong> Welcome to the demo! You're visit will be logged when you visit the Visits tab. No personal
+      information is collected, only the date of your visit. Feel free to add, modify, and remove the test data.
+      Please be respectful of others. No profanity please.
+  </div>
+    <div id="app"></div>
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/4.1.13/es5-shim.min.js"></script>
+    <![endif]-->
+    <script>
+        //let steal know we've already loaded the main css
+        steal = {
+            instantiated: {
+                "bundles/can-crud-app/app/crud.css!$css": null
+            }
+        };
+    </script>
+    <script src="{{ url_for('static', filename='can-crud/dist/bundles/can-crud-app/app/crud.js') }}"
+      data-main="can-crud-app/app/crud" data-env="production" base-url="static/can-crud/dist">
+
+        Promise.all([
+            System.import('can-crud-app/app/crud')
+        ]).then(function(modules) {
+            // var qs = modules[0];
+            var AppViewModel = modules[0].AppViewModel;
+            var config = '{{config_path}}';
+
+            System.import(config).then(function(module) {
+                var app = new AppViewModel(module.config || module.default);
+                app.startup('#app');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
