@@ -1,10 +1,10 @@
 from setuptools import setup
 
-setup(name='YourAppName',
+setup(name='flaskcrud',
       version='1.0',
       description='OpenShift App',
-      author='Your Name',
-      author_email='example@example.com',
+      author='roemhildtg',
+      author_email='roemhildtg@gmail.com',
       url='http://www.python.org/sigs/distutils-sig/',
-#      install_requires=['Django>=1.3'],
+      install_requires=['Flask==0.11.1'],
      )
