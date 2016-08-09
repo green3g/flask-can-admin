@@ -1,0 +1,3 @@
+[submodule "static/can-crud"]
+	path = static/can-crud
+	url = https://github.com/roemhildtg/can-crud-app.git
