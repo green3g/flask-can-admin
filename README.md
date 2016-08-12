@@ -1,5 +1,5 @@
 # flask-can-crud
-A working javascript application using a flask rest app integrated with canjs.
+A working javascript application using a flask rest app integrated with canjs to build a completely functional data management application.
 
 ## Demo
 
