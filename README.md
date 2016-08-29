@@ -3,6 +3,8 @@ A working javascript application using a flask rest app integrated with canjs to
 
 ## Demo
 
+Note: Demo will take a couple of minutes to boot up once visited. You may need to refresh the page a couple of times. Please be patient. 
+
 http://cancrud-roemhildtg.rhcloud.com/
 
 ## Project dependencies
