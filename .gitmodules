@@ -1,3 +1,3 @@
-[submodule "static/can-crud"]
-	path = static/can-crud
-	url = https://github.com/roemhildtg/can-crud-app.git
+[submodule "static/can-admin-app"]
+	path = static/can-admin-app
+	url = https://github.com/roemhildtg/can-admin-app

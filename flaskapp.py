@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/')
 @app.route('/<path:config_path>')
 def hello_world(config_path='can-crud-app/config/flask/'):
-    return render_template('crud.html', config_path=config_path)
+    return render_template('admin.html', config_path=config_path)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
