@@ -19,25 +19,24 @@
         //let steal know we've already loaded the main css
         steal = {
             instantiated: {
-                "bundles/can-admin-app/app/crud.css!$css": null
+                "can-admin-app/app/crud.css!$css": null
             }
         };
     </script>
     <script src="{{url_for('static', filename='can-admin-app/dist/bundles/can-admin-app/app/crud.js')}}"
-      base-url="{{url_for('static', filename='can-admin-app/dist')}}"  data-main="can-admin-app/app/crud">
+      base-url="{{url_for('static', filename='can-admin-app')}}" data-main="can-admin-app/app/crud">
+        var config = 'can-admin-app/config/flask/flask';
 
         Promise.all([
-            System.import('can-admin-app/app/crud')
+            System.import('can-admin-app/app/crud'),
+            System.import(config)
         ]).then(function(modules) {
-            // var qs = modules[0];
-            var AppViewModel = modules[0].AppViewModel;
-            var config = 'can-admin-app/config/flask/flask';
-
-            System.import(config).then(function(module) {
-                var app = new AppViewModel(module.config || module.default);
-                app.startup(document.getElementById('app'));
-            });
+            var AppViewModel = modules[0].AppViewModel,
+            config = modules[1].config || modules[1].default;
+            var app = new AppViewModel(config);
+            app.startup(document.getElementById('app'));
         });
+
     </script>
 
 </body>
