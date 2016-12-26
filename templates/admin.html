@@ -23,8 +23,12 @@
             }
         };
     </script>
+    {% if debug %}
+    <script src="{{url_for('static', filename='can-admin-app/node_modules/steal/steal.js')}}">
+    {% else %}
     <script src="{{url_for('static', filename='can-admin-app/dist/bundles/can-admin-app/app/crud.js')}}"
       base-url="{{url_for('static', filename='can-admin-app')}}" data-main="can-admin-app/app/crud">
+    {% endif %}
         var config = 'can-admin-app/config/flask/flask';
 
         Promise.all([

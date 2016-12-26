@@ -3,12 +3,12 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_restless import APIManager
 
 app = Flask(__name__)
-
+DEBUG = False
 
 @app.route('/')
 @app.route('/<path:config_path>')
 def hello_world(config_path='can-crud-app/config/flask/'):
-    return render_template('admin.html', config_path=config_path)
+    return render_template('admin.html', config_path=config_path, debug=DEBUG)
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)
