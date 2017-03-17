@@ -1,14 +1,31 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory
+from os.path import join
 from flask_sqlalchemy import SQLAlchemy
 from flask_restless import APIManager
 
 app = Flask(__name__)
 DEBUG = False
 
+
+descriptions = {
+    'flask': '''
+        This demo is a simple author/news article manager. Authors may have many
+        articles and are related by an <code>person_id</code>. The demo shows
+        two views for People. Basic shows the out of the box view on a model,
+        very little configuration necessary, while Advanced explores some of the
+        more useful functionalities of Can-Admin.
+        '''
+}
+
 @app.route('/')
-@app.route('/<path:config_path>')
-def hello_world(config_path='can-crud-app/config/flask/'):
-    return render_template('admin.html', config_path=config_path, debug=DEBUG)
+@app.route('/<string:page>')
+@app.route('/<string:page>/<path:config_path>')
+def page(page='home', config_path='flask'):
+    return render_template(
+        'pages/{}.html.j2'.format(page),
+        config_path='can-crud-app/config/{0}/{0}'.format(config_path), debug=DEBUG,
+        description=descriptions[config_path]
+    )
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 db = SQLAlchemy(app)

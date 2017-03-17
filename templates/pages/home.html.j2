@@ -1,0 +1,27 @@
+{% extends 'base.html.j2' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<img src="{{url_for('static', filename='images/rocket-logo.png')}}"  alt="Rocket Logo" class="logo-img float-right img-responsive" />
+<h3>Welcome to Can Admin</h3>
+
+<p>
+  Can Admin is a modern front end data administration component library built on
+  CanJS and styled with SpectreCSS.
+  It features a highly flexible and modular set of tools to enable the management
+  of any type of data.
+</p>
+
+<div class="divider clearfix"></div>
+<br />
+
+<h4>Why Can Admin?</h4>
+{% include 'pages/home/features.html' %}
+
+<h4>Technology Used</h4>
+{% include 'pages/home/technology.html' %}
+
+</div>
+
+{% endblock %}
