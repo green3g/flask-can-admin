@@ -1,4 +1,6 @@
-header {
+@import url('../can-admin-app/dist/bundles/can-admin/app/crud.css');
+
+header.main {
     padding: 1rem;
     background: #efefef;
 }

@@ -55,6 +55,8 @@ class Article(db.Model):
 class Visit(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     date = db.Column(db.DateTime)
+    article_id = db.Column(db.Integer, db.ForeignKey('article.id'))
+    article = db.relationship(Article, backref='visits')
 
 db.create_all()
 

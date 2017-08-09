@@ -24,14 +24,14 @@
     {% if debug %}
     <script src="{{url_for('static', filename='can-admin-app/node_modules/steal/steal.js')}}">
     {% else %}
-    <script src="{{url_for('static', filename='can-admin-app/dist/bundles/can-admin-app/app/crud.js')}}"
-      base-url="{{url_for('static', filename='can-admin-app')}}" data-main="can-admin-app/app/crud">
+    <script src="{{url_for('static', filename='can-admin-app/dist/steal.production.js')}}" 
+        data-main="can-admin/app/crud">
     {% endif %}
-        var config = 'can-admin-app/config/flask/flask';
+        var config = 'can-admin/config/news/news';
 
         Promise.all([
-            System.import('can-admin-app/app/crud'),
-            System.import(config)
+            steal.import('can-admin/app/crud'),
+            steal.import(config)
         ]).then(function(modules) {
             var AppViewModel = modules[0].AppViewModel,
             config = modules[1].config || modules[1].default;
