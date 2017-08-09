@@ -21,7 +21,7 @@
             }
         };
     </script>
-    {% if debug %}
+    {% if config.DEBUG %}
     <script src="{{url_for('static', filename='can-admin-app/node_modules/steal/steal.js')}}">
     {% else %}
     <script src="{{url_for('static', filename='can-admin-app/dist/steal.production.js')}}" 

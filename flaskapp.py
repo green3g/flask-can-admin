@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_restless import APIManager
 
 app = Flask(__name__)
-DEBUG = False
+app.config['DEBUG'] = False
 
 
 descriptions = {
@@ -23,7 +23,7 @@ descriptions = {
 def page(page='home', config_path='flask'):
     return render_template(
         'pages/{}.html.j2'.format(page),
-        config_path='can-crud-app/config/{0}/{0}'.format(config_path), debug=DEBUG,
+        config_path='can-crud-app/config/{0}/{0}'.format(config_path),
         description=descriptions[config_path]
     )
 
