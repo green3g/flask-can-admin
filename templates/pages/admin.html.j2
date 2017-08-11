@@ -21,16 +21,18 @@
             }
         };
     </script>
+
     {% if config.DEBUG %}
     <script src="{{url_for('static', filename='can-admin-app/node_modules/steal/steal.js')}}">
     {% else %}
     <script src="{{url_for('static', filename='can-admin-app/dist/steal.production.js')}}" 
-        data-main="can-admin/app/crud">
+        data-main="can-admin/app/app">
     {% endif %}
-        var config = 'can-admin/config/news/news';
+
+        var config = 'can-admin/config/config';
 
         Promise.all([
-            steal.import('can-admin/app/crud'),
+            steal.import('can-admin/app/app'),
             steal.import(config)
         ]).then(function(modules) {
             var AppViewModel = modules[0].AppViewModel,

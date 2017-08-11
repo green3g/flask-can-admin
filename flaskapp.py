@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_restless import APIManager
 
 app = Flask(__name__)
-app.config['DEBUG'] = False
+app.config['DEBUG'] = True
 
 
 descriptions = {
