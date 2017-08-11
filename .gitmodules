@@ -1,0 +1,3 @@
+[submodule "static/can-navigate"]
+	path = static/can-navigate
+	url = https://github.com/roemhildtg/can-navigate.git
